@@ -66,6 +66,13 @@
                     const remainingSeconds = 60 - currentSeconds;
                     document.getElementById("status").innerHTML = `Current: ${schedule[i].label}`;
                     document.getElementById("countdown").innerHTML = `${Math.floor(remainingMinutes / 60)}h ${remainingMinutes % 60}m ${remainingSeconds}s left`;
+
+                     // Change countdown color for breaks
+                    if (schedule[i].label === "Break") {
+                        document.getElementById("countdown").style.color = "green";
+                    } else {
+                        document.getElementById("countdown").style.color = "red";
+                    }
                     break;
                 }
             }
